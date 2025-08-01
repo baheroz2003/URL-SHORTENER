@@ -21,3 +21,7 @@ A simple URL shortener API built with Go, Fiber, Redis, and Docker. It shortens 
 
 ✅ Dockerized for easy setup
 
+-----------TO RUN-----------
+type docker-compose up -d
+------------to stop---
+docker-compose down

@@ -25,3 +25,48 @@ A simple URL shortener API built with Go, Fiber, Redis, and Docker. It shortens 
 type docker-compose up -d
 ------------to stop---
 docker-compose down
+
+-------------------------------------------------FLOW-------------------------------------------------------------------------------------------------------------
+🧭 ORDER TO UNDERSTAND THE FLOW
+main.go
+🔹 Entry point of the application.
+🔹 Sets up the server, middleware, and routes.
+
+routes/ folder
+🔹 Check how routes like /shorten and /resolve/:shortURL are registered.
+🔹 Links HTTP endpoints to logic functions.
+
+shorten.go
+🔹 Handles the creation of short URLs.
+🔹 Includes logic for generating, validating, and storing shortened URLs.
+
+resolve.go
+🔹 Handles resolving short URLs back to original ones.
+🔹 Includes logic for reading from Redis and redirecting.
+
+helpers/helpers.go
+🔹 Contains reusable utility functions.
+🔹 Example: URL validators, random string generators, etc.
+
+database/database.go
+🔹 Redis connection logic.
+🔹 See how Redis is initialized, accessed, and used by the app.
+
+go.mod and go.sum
+🔹 See which Go modules and libraries are used (like fiber, redis, etc).
+
+Dockerfile
+🔹 Defines how the Go app is built inside a Docker image.
+
+docker-compose.yml
+🔹 Brings up both the Go app and Redis together.
+🔹 Defines networking and service dependencies.
+
+README.md
+🔹 Often provides usage, setup instructions, and examples.
+🔹 Follow it for running and testing.
+
+db/ folder (if used)
+🔹 Might contain schema logic or data dumps for Redis, or be empty.
+
+
